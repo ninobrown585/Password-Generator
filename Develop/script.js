@@ -17,7 +17,7 @@
   //numbers
   pwdNumbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
 
-  //array to hold special characters
+  //special characters
   spcCharacter: ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",",
     "-", ".", "/", "\\", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]//32
 }
@@ -36,3 +36,14 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+var generatePassword = function (){
+  
+
+  var specCharacter;
+  var num;
+  var upper;
+  var length = 0;
+  var lower;
+
+}

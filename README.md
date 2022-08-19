@@ -1,5 +1,4 @@
 
-
 # User Story
 
 AS AN employee with access to sensitive data

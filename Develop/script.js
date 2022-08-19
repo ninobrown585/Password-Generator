@@ -39,11 +39,72 @@ generateBtn.addEventListener("click", writePassword);
 
 var generatePassword = function (){
   
-
+//initialize
   var specCharacter;
   var num;
   var upper;
   var length = 0;
   var lower;
 
+  var result = " ";
+  pwdOptions.pwdLength = 0;
+//While loop that rerceives input from user and designates a random password before rendering to user
+  while(length < 8 || length > 128){
+    length = prompt("Please choose the length of your password, between 8 and 128 characters");
+
+    if(length === 0){
+      return
+    } else if(!isFinite(length)){
+      alert("Number not detected");
+      return
+    } else if(length <8 || length > 128){
+      alert("Please enter a password between 8 and 128 characters");
+      return
+    } else{
+        promptRendered();
+
+        while (pwdOptions.pwdLength < length) {
+          //used make sure the user selects at least one of the criteria  
+          if (lower === false && upper === false && num === false && specCharacter === false) {
+            alert("You must select at least one criteria of lowercase, uppercase, numbers or special characters")
+            promptRendered();
+          }
+          else {
+            
+            if (lower === true && pwdOptions.pwdLength < length) {
+              var lc = pwdOptions.lowerCaseLet[Math.floor(Math.random() * 26)]
+              result = result + lc;
+              pwdOptions.pwdLength++;
+            }
+
+                         
+            if (specCharacter === true && pwdOptions.pwdLength < length) {
+              var specChar = pwdOptions.spcCharacter[Math.floor(Math.random() * 32)]
+              result = result + specChar;
+              pwdOptions.pwdLength++;
+            }
+
+            if(upper == true && pwdOptions.pwdLength < length ){
+              var upCase = pwdOptions.upperCaseLet[Math.floor(Math.random() * 26)]
+              result = result + upCase;
+              pwdOptions.pwdLength++;
+            }
+            if(num === true && pwdOptions.pwdLength < length){
+              var myNum = pwdOptions.pwdNumbers[Math.floor(Math.random() * 10)]
+              result = result + myNum;
+              pwdOptions.pwdLength++;
+            }
+
+    }
+  }
+}
+    return result;
+
+    function promptRendered() {
+      lower = confirm("Do you want to use lower case letters?");
+      upper = confirm("Do you want to use upper case letters?");
+      num = confirm("Do you want to use numbers?");
+      specCharacter = confirm("Do you want to use any special characters?");
+    }
+  }
 }

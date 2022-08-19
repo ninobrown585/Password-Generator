@@ -58,7 +58,7 @@ var generatePassword = function (){
       alert("Number not detected");
       return
     } else if(length <8 || length > 128){
-      alert("Please enter a password between 8 and 128 characters");
+      alert("Enter a password between 8 and 128 characters");
       return
     } else{
         promptRendered();

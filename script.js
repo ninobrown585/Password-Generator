@@ -21,7 +21,7 @@
   spcCharacter: ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",",
     "-", ".", "/", "\\", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]//32
 }
-// Get references to the #generate element
+// Queries the id "generate" and assign it to generateBtn
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -50,7 +50,7 @@ var generatePassword = function (){
   pwdOptions.pwdLength = 0;
 //While loop that rerceives input from user and designates a random password before rendering to user
   while(length < 8 || length > 128){
-    length = prompt("Please choose the length of your password, between 8 and 128 characters");
+    length = prompt("The length of your password was not between 8 and 128 characters");
 
     if(length === 0){
       return
@@ -101,10 +101,10 @@ var generatePassword = function (){
     return result;
 
     function promptRendered() {
-      lower = confirm("Do you want to use lower case letters?");
-      upper = confirm("Do you want to use upper case letters?");
-      num = confirm("Do you want to use numbers?");
-      specCharacter = confirm("Do you want to use any special characters?");
+      lower = confirm("Click ok to use lower case letters?");
+      upper = confirm("Click ok to use upper case letters?");
+      num = confirm("Click ok to use numbers?");
+      specCharacter = confirm("Click ok to use any special characters?");
     }
   }
 }

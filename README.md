@@ -1,3 +1,10 @@
+## Portfolio Screenshot
+
+ Use [screenshot](./image/Password-Generator-img.png) To view screenshot
+
+## 💡 Live Site
+
+Use [Github](https://ninobrown585.github.io/Password-Generator/) to view the deployed page.
 
 # User Story
 
